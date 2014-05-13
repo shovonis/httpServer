@@ -21,7 +21,6 @@ public class HttpRequestHandler {
         requestHeader = new String[0];
     }
 
-
     public void isRequestValid() throws IOException {
         String requestLine = inputStream.readLine();
         if (requestLine.startsWith("GET") || requestLine.startsWith("POST")) {

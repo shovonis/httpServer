@@ -15,12 +15,13 @@ import java.util.concurrent.Executors;
  * To change this template use File | Settings | File Templates.
  */
 public class ServerRunner {
-    private static final int TOTAL_THREAD = 20;
+    public static final int SERVER_PORT = 8081;
+    public static final int TOTAL_THREAD = 20;
 
     public static void main(String[] args) {
         ExecutorService executor = Executors.newFixedThreadPool(TOTAL_THREAD);
         try {
-            ServerSocket serverSocket = new ServerSocket(8081);
+            ServerSocket serverSocket = new ServerSocket(SERVER_PORT);
             System.out.println("Server Started...");
 
             while (true) {

@@ -16,9 +16,9 @@ import java.net.Socket;
  * To change this template use File | Settings | File Templates.
  */
 public class ClientRequestProcessor implements Runnable {
-    HttpRequestHandler httpRequestHandler = null;
-    HttpResponseHandler httpResponseHandler = null;
-    private Socket clientSocket;
+    private HttpRequestHandler httpRequestHandler = null;
+    private HttpResponseHandler httpResponseHandler = null;
+    private Socket clientSocket = null;
 
     public ClientRequestProcessor(Socket clientSocket) throws IOException {
         this.clientSocket = clientSocket;
@@ -39,7 +39,6 @@ public class ClientRequestProcessor implements Runnable {
             if (requestType.equals("POST")) {
                 System.out.println(httpRequestHandler.getPostData());
             }
-            //System.out.println("httpRequest = " + httpRequest);
             if (!httpRequest.isEmpty())
                 httpResponseHandler.writeFileToOutputStream(httpRequest, StatusCode.OK);
 

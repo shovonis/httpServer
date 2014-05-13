@@ -9,7 +9,6 @@ public class StatusCode {
     public static final String BAD_REQUEST = "HTTP/1.1 400  Bad Request\n\n";
     public static final String ACCESS_DENIED = "HTTP/1.1 403  Access denied\n\n";
 
-
     public static byte[] getFileNotFoundErrMsg() {
         return "<html><h1>404 FILE NOT FOUND</h1></html>".getBytes();
     }
